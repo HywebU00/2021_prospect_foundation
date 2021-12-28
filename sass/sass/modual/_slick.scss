@@ -1,0 +1,1054 @@
+// slick.css
+/* Slider */
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-list:focus {
+    outline: none;
+}
+
+.slick-list.dragging {
+    cursor: pointer;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slick-track:before,
+.slick-track:after {
+    display: table;
+    content: '';
+}
+
+.slick-track:after {
+    clear: both;
+}
+
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+
+[dir='rtl'] .slick-slide {
+    float: right;
+}
+
+.slick-slide img {
+    display: block;
+}
+
+.slick-slide.slick-loading img {
+    display: none;
+}
+
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+// 共用slick的a focus
+.slick-slide {
+    a {
+        &:focus {
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 99;
+                @include box-shadow(0px 0px 0px 2px $aFocus inset);
+            }
+        }
+    }
+}
+
+// slick_theme.css
+/* ---箭頭的樣式--- */
+.slick-prev,
+.slick-next {
+    font-size: 0em;
+    line-height: 0em;
+    position: absolute;
+    top: 40%;
+    display: block;
+    width: 40px;
+    height: 60px;
+    padding: 0;
+    min-width: auto;
+    z-index: 2;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    transition: .3s ease-out;
+
+    &:hover,
+    &:focus {
+        border: none !important;
+        outline: none;
+        box-shadow: 0px 0px 0px 2px $aFocus inset;
+    }
+}
+
+/* 上一則 位置 圖片*/
+.slick-prev {
+    left: 25px;
+    background: url('../images/slick/icon_arrow_left_inverse.png') center center no-repeat RGBA(255, 255, 255, .5);
+    background-size: 30px 30px;
+
+    /* 箭頭 hover及focus 樣式 */
+    &:hover,
+    &:focus {
+        background: url('../images/slick/icon_arrow_left_inverse.png') center center no-repeat RGBA(255, 255, 255, .8);
+        background-size: 30px 30px;
+    }
+}
+
+/* 下一則 位置 圖片*/
+.slick-next {
+    right: 25px;
+    background: url('../images/slick/icon_arrow_right_inverse.png') center center no-repeat RGBA(255, 255, 255, .5);
+    background-size: 30px 30px;
+
+    /* 箭頭 hover及focus 樣式 */
+    &:hover,
+    &:focus {
+        background: url('../images/slick/icon_arrow_right_inverse.png') center center no-repeat RGBA(255, 255, 255, .8);
+        background-size: 30px 30px;
+    }
+}
+
+.slick-prev,
+.slick-next {
+    opacity: .6;
+}
+
+
+/* 沒有無限輪播時，滑到最兩邊資料時，箭頭暗掉 */
+.slick-disabled {
+    opacity: .25;
+}
+
+/* ---點的樣式---*/
+// slick dots 
+.slick-dots {
+    position: absolute;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 9;
+    list-style: none;
+    box-sizing: border-box;
+
+    li {
+        position: relative;
+        padding: 0;
+        cursor: pointer;
+
+        button {
+            font-size: 0em;
+            line-height: 0em;
+            display: block;
+            cursor: pointer;
+            border: 0;
+            outline: none;
+        }
+    }
+}
+
+/* ---點的位置、大小、顏色---*/
+.slick-dots {
+    /* 位置距離 */
+    bottom: 20px;
+
+    li {
+        /* 兩點的距離 */
+        margin: 0 10px;
+
+        button {
+            /* 點的顏色 */
+            background: #666;
+            opacity: .4;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+
+            &:hover,
+            &:focus {
+                opacity: 1;
+                /* 點hover的顏色 */
+                background: #21baff;
+            }
+
+            &:focus {
+                opacity: 1;
+                /* 點focus的顏色 */
+                background: #ff3e4d;
+                // box-shadow: 0px 0px 0px 1px #ff3e4d; /* 讓focus過去的點大一些 */
+            }
+        }
+
+        &.slick-active {
+            button {
+                opacity: 1;
+                /* 點 active 的顏色 */
+                background: $aHover;
+
+                &:hover {
+                    /* 點 active  hover的顏色 */
+                    background: #ff3e4d;
+                }
+
+                &:focus {
+                    /* 點 active  focus的顏色 */
+                    background: #ff3e4d;
+                }
+            }
+        }
+    }
+}
+
+// ---------slick._scss
+// 首頁大圖輪播 
+.mpSlider {
+    width: 100%;
+    padding-bottom: 3em;
+    @include gutter(0);
+
+    .img-container {
+        @include aspect-ratio(5, 2); //PC版比例
+
+        @include screen('mobile') {
+            @include aspect-ratio(5, 3); //Mobile版比例
+        }
+    }
+
+    .slick-prev {
+        @include screen('mobile') {
+            top: 35%;
+            left: 2%;
+        }
+    }
+
+    .slick-next {
+        @include screen('mobile') {
+            top: 35%;
+            right: 2%;
+        }
+    }
+}
+
+// slick._scss
+// adSlider
+.adSlider {
+    @include gutter(70px);
+    margin-bottom: 20px;
+
+    @include screen('mobile') {
+        @include gutter();
+    }
+
+    .slick-prev {
+        left: 0;
+        top: 0;
+    }
+
+    .slick-next {
+        right: 0;
+        top: 0;
+    }
+
+    .img-container {
+        width: 165px;
+        height: 55px;
+        margin: 0px 15px;
+
+        a {
+            display: block;
+
+            img {
+                margin: 0 auto;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+//  slick燈箱
+.lightbox_slider {
+    h3 {
+        font-size: 1.5em;
+        padding: 12px 0px 15px 0px;
+        margin: 0.5em 0px 1.2em;
+        border-bottom: 1px solid $primaryColor;
+    }
+
+    background: #fff;
+    padding: 1em 0;
+    clear: both;
+
+    .cp_slider {
+        @include gutter;
+    }
+
+    .img-container {
+        margin: 0px 15px;
+        @include aspect-ratio(4, 3);
+        overflow: hidden;
+
+        img {
+            object-fit: contain;
+        }
+    }
+
+    .caption {
+        padding: .5em !important;
+        position: absolute;
+        background: rgba(0, 0, 0, .75) !important;
+        color: #FFF;
+        bottom: -2em !important;
+        left: 0;
+        font-size: .938em !important;
+        height: 2em !important;
+        line-height: 1 !important;
+        width: 100%;
+        @include text-overflow;
+        transition: .3s ease-out;
+    }
+
+    // dots
+    .slick-dots {
+        bottom: -30px !important;
+
+        @include screen('mobile') {
+            bottom: -40px !important;
+            padding: 0;
+        }
+
+        li {
+            width: 10px;
+            height: 10px;
+            margin: 0 10px;
+        }
+    }
+
+    //Arrows
+    .slick-prev {
+        left: -1 * $grid-gutter-width/2;
+    }
+
+    .slick-next {
+        right: -1 * $grid-gutter-width/2;
+    }
+
+    a {
+        color: #555;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        &:hover,
+        &:focus {
+            .caption {
+                bottom: 0 !important;
+            }
+        }
+    }
+}
+
+
+//  同步輪播
+.Syncing_slider {
+    @extend %clearfix;
+    position: relative;
+
+    h3 {
+        font-size: 1.5em;
+        padding: 12px 0px 15px 0px;
+        margin: 0.5em 0px 1.2em;
+        border-bottom: 1px solid $primaryColor;
+    }
+
+    .slick-slide {
+        position: relative;
+    }
+
+    .controls {
+        text-align: center;
+        font-weight: bold;
+        max-width: 100px;
+        color: #FFF;
+        padding: .2em .5em;
+        margin: 0px auto;
+        background: $primaryColor;
+        border-radius: 20px;
+        text-shadow: 1px 1px 2px RGBA(0, 0, 0, .8);
+    }
+
+    .img-container {
+        @include aspect-ratio(16, 9);
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            object-fit: cover;
+        }
+    }
+
+    p {
+        position: absolute;
+        background: RGBA(0, 0, 0, .55);
+        text-align: center;
+        color: #FFF;
+        padding: .5em;
+        box-sizing: border-box;
+        @include text-overflow;
+        bottom: 0px;
+        width: 100%;
+        height: 2.5em;
+        line-height: 1.5em;
+        margin: 0px;
+        z-index: 2;
+
+        @include screen('mobile') {
+            display: none;
+        }
+    }
+
+    .slick-next {
+        background: url(../vendor/slick/icon_arrow_right.png) center center no-repeat;
+        background-size: 80%;
+
+        @include screen('mobile') {
+            right: .5em;
+        }
+    }
+
+    .slick-prev {
+        background: url(../vendor/slick/icon_arrow_left.png) center center no-repeat;
+        background-size: 80%;
+
+        @include screen('mobile') {
+            left: .5em;
+        }
+    }
+
+    .Slider-for {
+        width: 80%;
+        min-width: 260px;
+        max-width: 800px;
+        margin: 1em auto;
+        position: relative;
+    }
+
+    .Slider-nav {
+        width: 80%;
+        min-width: 260px;
+        max-width: 800px;
+        margin: 1em auto;
+        position: relative;
+
+        .img-container {
+            p {
+                display: none;
+            }
+        }
+
+        /*正在動作的縮圖*/
+        .slick-slide.slick-current {
+            opacity: 1;
+        }
+
+        position: relative;
+    }
+
+    .slick-dots {
+        display: none !important;
+    }
+}
+
+//首頁大圖輪播
+.mpSliderBlock {
+    position: relative;
+
+    // &:before {
+    //     content: "";
+    //     display: block;
+    //     position: absolute;
+    //     left: 0;
+    //     top: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background: rgb(0, 0, 0);
+    //     background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, .2) 100%);
+    // }
+}
+
+.mpSlider01,
+.mpSlider02 {
+    position: relative;
+}
+
+.mpbanner_slider {
+    .swiper-wrapper {
+        height: calc(100vh + 20px);
+        min-height: 650px;
+
+        @include screen('mobile') {
+            height: 500px;
+            min-height: 500px;
+        }
+
+        .swiper-slide {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+            }
+
+            >a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+
+            &.swiper-slide-thumb-active {
+                position: relative;
+                //border-top: 2px solid #fff;
+
+            }
+        }
+    }
+
+    .wordContent {
+        display: flex;
+        flex-wrap: wrap;
+        position: absolute;
+        width: 80%;
+        max-width: 890px;
+        bottom: 200px;
+        //left: calc((100% - 1200px) / 2);
+        left: 100px;
+        z-index: 10;
+
+        @media screen and (max-width: 1200px) {
+            left: 15px;
+        }
+
+        @include screen('mobile') {
+            bottom: 150px;
+        }
+
+        .bigTitle {
+            width: 100%;
+            margin: .25em 0;
+            color: #fff;
+            font-size: 3em;
+            line-height: 1.2em;
+            font-weight: bold;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-height: 2.4em;
+            text-shadow: 0 0 5px rgba(0, 0, 0, .5);
+        }
+
+        .summary {
+            width: 100%;
+            margin-bottom: 1em;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-height: 2.8em;
+            color: #fff;
+            text-shadow: 0 0 5px rgba(0, 0, 0, .3);
+        }
+
+        .publish_date {
+            font-size: .875em;
+            color: $color-gray;
+            margin-right: 1em;
+
+            @include screen('mobile') {
+                display: none;
+            }
+        }
+
+        .authorBlock {
+            @include li-reset;
+            font-size: .875em;
+            color: $color-gray;
+
+            @include screen('mobile') {
+                display: none;
+            }
+        }
+
+        .author {
+            margin-right: .5em;
+        }
+    }
+}
+
+.mpbanner_slider_thumb {
+    position: absolute;
+    width: calc(100% - 100px);
+    bottom: 30px;
+    left: 50px;
+    right: 0;
+    z-index: 30;
+    padding: 0 50px;
+    color: #fff;
+
+    @media screen and (max-width: 1200px) {
+        width: 100%;
+        left: 0;
+    }
+
+    @include screen('mobile') {
+        padding: 0 15px;
+        bottom: 15px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        opacity: .7;
+        top: calc(50% - 10px);
+
+        &.swiper-button-disabled {
+            opacity: .35;
+        }
+    }
+
+    .navNum {
+        position: relative;
+        float: left;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid rgba(255, 255, 255, .3);
+        border-radius: 50px;
+        margin-right: .5em;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    .navTitle {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 48px;
+        margin-bottom: .3em;
+    }
+
+    .author {
+        color: $color-gray;
+        font-size: .875em;
+    }
+
+    .swiper-slide {
+        cursor: pointer;
+        padding: 1.2em .5em;
+        border-top: 1px solid $color-line;
+
+        @include screen('mobile') {
+            padding: 1.2em 2em;
+        }
+
+        &.swiper-slide-thumb-active {
+            position: relative;
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: -1px;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: 2px;
+                background: #fff;
+            }
+        }
+    }
+
+}
+
+.mpSlider02 {
+
+    .mpbanner_slider {
+
+        .swiper-wrapper {
+            height: 90vh;
+            max-height: 800px;
+            @include screen('tablet'){
+                height: 70vh;
+            }
+            @include screen('mobile'){
+                height: 60vh;
+            }
+        }
+
+        .swiper-slide {
+
+            .img-container {
+                height: 100%;
+                width: 100%;
+                @include aspect-ratio(2, 1);
+
+                img {
+                    object-fit: cover;
+                }
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: block;
+                height: 100%;
+                width: 100%;
+                z-index: 2;
+                box-shadow: rgba(0, 0, 0, 0.7) 0px 50px 40px -40px inset, rgba(0, 0, 0, 0.4) 0px 110px 50px -50px inset;
+            }
+
+            &:after {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 100%);
+            }
+        }
+
+        .wordContent {
+            left: calc((100% - 1200px) / 2);
+            bottom: 160px;
+            z-index: 50;
+
+            @media screen and (max-width: 1200px) {
+                left: 0;
+                padding: 0 15px;
+            }
+
+            @include screen('mobile'){
+                bottom: 140px;
+            }
+
+            .bigTitle {
+                font-size: 2.25em;
+                line-height: 1.5em;
+                max-height: 3em;
+            }
+
+            [class*='btn_'] {
+                position: relative;
+                display: inline-block;
+                padding: .6em 2em;
+                border-radius: 30px;
+                font-size: .875em;
+                margin: .5em 1em .5em 0;
+                transition: .3s ease-in;
+
+                &:hover {
+                    background: $primaryColor;
+                    color: #fff;
+                    border-color: $primaryColor;
+                }
+            }
+
+            .btn_apply {
+                background: $color-yellow;
+                border: 2px solid $color-yellow;
+                color: $color-word;
+
+            }
+
+            .btn_more {
+                background: transparent;
+                border: 2px solid #fff;
+                color: #fff;
+            }
+        }
+    }
+
+    .mpbanner_slider_thumb {
+        max-width: 1200px;
+        left: calc((100% - 1200px) / 2);
+        padding: 0;
+        color: $color-word;
+
+        @media screen and (max-width: 1200px) {
+            left: 0;
+            padding: 0 15px;
+        }
+
+        .swiper-slide {
+            border-top: none;
+            padding: 1.5em 1.8em;
+            background: #fff;
+            &.swiper-slide-thumb-active {
+                box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+                &:after {
+                    content: "";
+                    top: auto;
+                    bottom: 0;
+                    height: 4px;
+                    background: $primaryColor;
+                }
+            }
+
+            time {
+                font-size: .875em;
+                color: $color-word2;
+                margin-bottom: .3em;
+                display: inline-block;
+            }
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            opacity: .7;
+            top: -25px;
+            left: auto;
+            width: 72px !important;
+            height: 48px !important;
+            border-radius: 2px;
+            opacity: 1;
+
+            &.swiper-button-disabled {
+                background-color: lighten($secondaryColor, 5);
+            }
+        }
+
+        .swiper-button-prev {
+            background: $secondaryColor url(../images/basic/icon_left2.svg) center no-repeat;
+            background-size: 16px;
+            right: 82px;
+        }
+
+        .swiper-button-next {
+            background: $secondaryColor url(../images/basic/icon_right2.svg) center no-repeat;
+            background-size: 16px;
+            right: 10px;
+        }
+    }
+}
+
+.swiper-container {}
+
+
+
+.videoSlider,
+.trendingSlider {
+
+    .slick-prev,
+    .slick-next {
+        top: auto;
+        bottom: calc(100% + 10px);
+        width: 40px !important;
+        height: 20px !important;
+        z-index: 10;
+    }
+
+    .slick-prev {
+        background: url(../images/basic/icon_left.svg) center no-repeat;
+        background-size: 16px;
+        left: 0;
+    }
+
+    .slick-next {
+        background: url(../images/basic/icon_right.svg) center no-repeat;
+        background-size: 16px;
+        right: 0;
+    }
+
+    .slick-dots {
+        bottom: calc(100% + 10px);
+
+        li {
+            margin: 0 2px;
+
+            button {
+                width: 8px;
+                height: 8px;
+
+                &:before {
+                    width: 8px;
+                    height: 8px;
+                }
+            }
+
+            &.slick-active {
+                button {
+                    &:before {
+                        background: $primaryColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.trendingSlider {
+    .nav_thumb {
+        color: lighten($color-word2, 20);
+        font-weight: bold;
+
+        &:hover {
+            color: $primaryColor;
+        }
+    }
+
+    .trendingSlider-for {
+        padding-top: 2em;
+
+        @include screen('tablet') {
+            padding-bottom: 1em;
+        }
+
+        @include screen('mobile') {
+            padding: 1em 0;
+        }
+    }
+
+    .trendingSlider-nav {
+        .slick-list {
+            margin: 0;
+            position: absolute;
+            right: 0;
+            top: -52px;
+            max-width: calc(100% - 200px);
+
+            @include screen('mobile') {
+                position: static;
+                max-width: 100%;
+                margin: 0 50px;
+            }
+        }
+    }
+
+    .slick-dots {
+        bottom: calc(100% - 20px);
+    }
+
+    .slick-prev,
+    .slick-next {
+        bottom: calc(100% - 20px);
+    }
+
+    .slick-current {
+        color: $primaryColor;
+
+        >span {
+            position: relative;
+            display: inline-block;
+            padding-bottom: .3em;
+
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                display: block;
+                width: 100%;
+                height: 1px;
+                background: $primaryColor;
+            }
+        }
+
+    }
+}
+
+@keyframes {}
