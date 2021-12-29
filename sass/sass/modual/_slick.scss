@@ -878,7 +878,7 @@
             padding: 1.5em 1.8em;
             background: #fff;
             &.swiper-slide-thumb-active {
-                box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+                box-shadow: rgba(27, 31, 35, 0.15) 0px 0px 0px 1px inset;
 
                 &:after {
                     content: "";
@@ -985,6 +985,7 @@
     .nav_thumb {
         color: lighten($color-word2, 20);
         font-weight: bold;
+        padding: 0 .5em;
 
         &:hover {
             color: $primaryColor;

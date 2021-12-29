@@ -720,6 +720,7 @@ a.more {
         span {
             display: block;
             transform: skewX(-25deg);
+            white-space: nowrap;
 
             @include screen('mobile') {
                 transform: skewX(0deg);
@@ -728,14 +729,14 @@ a.more {
     }
 
     p {
-        margin: 0 3em;
+        margin: .5em 3em;
         @include screen('mobile'){
             margin: 0 0 1em 0;
         }
     }
 
     .goget {
-        padding: .5em 2.5em .5em 1.5em;
+        padding: .5em 3em .5em 1.5em;
         color: #fff;
         font-size: .875em;
         background: $importantColor url(../images/basic/icon_linkto2.svg) center right 1.2em no-repeat;

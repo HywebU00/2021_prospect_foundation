@@ -83,7 +83,7 @@ $(function() {
         slidesToScroll: 1,
         autoplay: false,
         autoplaySpeed: 1500,
-        
+
     });
 
     $('.trendingSlider-for').slick({
@@ -137,6 +137,7 @@ $(function() {
             },
         ],
     });
+
 
     // 廣告輪播
     $('.adSlider').slick({
@@ -249,10 +250,12 @@ $(function() {
         infinite: true,
     });
 
-    $('.live_container .close').click(function (e) {
+    $('.live_container .close').click(function(e) {
         $(".live_container").hide();
     });
 });
+
+
 
 $(document).ready(function() {
     var swiperThumb = new Swiper(".SwiperThumb", {
@@ -370,7 +373,7 @@ $(document).ready(function() {
             }
         }
     });
-    
+
 });
 $(document).ready(function() {
     var swiperThumb02 = new Swiper(".SwiperThumb02", {
@@ -381,9 +384,9 @@ $(document).ready(function() {
         watchSlidesProgress: true,
         autoplay: {
             delay: 5000,
-             pauseOnMouseEnter: true, //滑鼠移至swiper上停止
+            pauseOnMouseEnter: true, //滑鼠移至swiper上停止
             disableOnInteraction: true, //移開後可以繼續autoPlay
-         },
+        },
         breakpoints: {
             575: {
                 slidesPerView: 2,
@@ -392,10 +395,10 @@ $(document).ready(function() {
                 slidesPerView: 2,
             },
             1024: {
-                slidesPerView: 3,
+                slidesPerView: 4,
             },
             1200: {
-                slidesPerView: 4,
+                slidesPerView: 5,
             },
         }
     });
@@ -489,5 +492,5 @@ $(document).ready(function() {
     //         }
     //     }
     // });
-    
+
 });
