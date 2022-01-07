@@ -1036,7 +1036,7 @@
 
 
 .videoSlider,
-.trendingSlider {
+.trendingSlider{
 
     .slick-prev,
     .slick-next {
@@ -1157,8 +1157,7 @@
 }
 
 .cppic_slider{
-    margin: 0 -15px;
-    
+
     .articleBlock{
         margin: 0 15px;
         h3{
@@ -1176,7 +1175,20 @@
         .img-container {
             @include aspect-ratio(1, 1);
         }
+    }
+
+    .slick-next{
+        right: 0;
     } 
+
+    .slick-prev{
+        left: 0;
+    }
+
+    .slick-dots{
+        bottom: -30px;
+    }
+
 }
 
 @keyframes {}
