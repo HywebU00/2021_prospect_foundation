@@ -1,8 +1,15 @@
 .breadcrumb {
-    border-bottom: 1px solid #EEE;
     padding: .1em 0em .1em;
-    font-size: .813em;
-    margin: 0px auto 5px;
+    font-size: .8125em;
+    margin: 0 0 4em;
+    display: flex;
+    color: $color-word2;
+    max-width: calc(100% - 40px);
+    @include screen('mobile'){
+        margin-bottom: 3em;
+        flex-wrap: wrap;
+    }
+    
     ul {
         @include li-reset;
         li {

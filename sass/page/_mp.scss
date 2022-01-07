@@ -441,7 +441,7 @@ a.more {
             @include aspect-ratio(16, 9);
 
             &:after {
-                background-size: 80px;
+                background-size: 70px;
             }
         }
 
@@ -489,102 +489,7 @@ a.more {
     }
 }
 
-//文章區塊
-.articleBlock {
-    display: block;
-    position: relative;
-    transition: .3s ease-in;
 
-    &:after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.05);
-        transition: .3s ease-in;
-    }
-
-    &:hover {
-        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-
-        &:after {
-            background-color: transparent;
-        }
-
-        .img-container {
-            img {
-                transform: scale(1.08);
-            }
-        }
-    }
-
-    >.tagGrp {
-        position: absolute;
-        top: 1em;
-        left: 1em;
-        display: flex;
-        flex-wrap: wrap;
-        z-index: 1;
-    }
-
-    >h3,
-    .articleTitle {
-        position: absolute;
-        bottom: 1em;
-        margin: 0;
-        padding: 0 1em;
-        color: #fff;
-        width: 100%;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-height: 4.2em;
-        font-size: 1.125em;
-        z-index: 1;
-        line-height: 1.4em;
-    }
-
-    .img-container {
-        @include aspect-ratio(1, 1.1);
-        position: relative;
-        width: 100%;
-        height: 100%;
-
-        // &:after {
-        //     content: "";
-        //     position: absolute;
-        //     left: 0;
-        //     top: 0;
-        //     display: block;
-        //     width: 100%;
-        //     height: 100%;
-        //     background-color: rgba(0, 0, 0, .1);
-        //     transition: .3s ease-in;
-        // }
-
-        &:after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 130px;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.7) 100%);
-        }
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: .3s ease-in;
-        }
-    }
-}
 
 .articleGrp {
     display: flex !important;
@@ -637,7 +542,7 @@ a.more {
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, .3) url(../images/basic/icon_play.png) no-repeat center;
-            background-size: 60px;
+            background-size: 50px;
             opacity: .6;
             transition: all .3s ease-in;
         }

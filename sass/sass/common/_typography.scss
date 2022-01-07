@@ -4,7 +4,7 @@
     font-size: 1em * 1.0666666;
     line-height: 1.65em;
     @include screen('xs_mobile') {
-        font-size: 1em * 1.2;
+        font-size: 1em * 1.125;
     }
     h1 {
         font-size: 2em;
@@ -15,6 +15,7 @@
     }
     h3 {
         font-size: 1.5em;
+        line-height: 1.5em;
     }
     h4 {
         font-size: 1.25em;
@@ -50,12 +51,13 @@
         font-size: 1em;
     }
     blockquote {
-        background: #f1f1f1;
+        background: $lightColor;
         font-style: normal;
         display: block;
         font-size: 1em;
-        border-left: 5px solid $primaryColor;
-        padding: 2em;
+        font-weight: bold;
+        //border-left: 5px solid $primaryColor;
+        padding: 1em;
         box-sizing: border-box;
         margin: 0 0em 2em;
     }

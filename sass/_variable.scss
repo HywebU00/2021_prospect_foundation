@@ -7,6 +7,7 @@ $primaryColor: #5C84FF; //主色
 $secondaryColor: #222222; //輔色
 $importantColor: #1A368B; //點綴
 $linkColor: #00a4f9; //連結
+$lightColor: #E0E8FF;
 
 // 但注意真實顏色與語意的關聯必須易於辨識
 $color-blue: #0066cc;
@@ -23,6 +24,8 @@ $color-word: #222; //一般字的顏色
 $color-word2: #555;
 $btn-word: #222; //按鈕字的顏色
 $color-line: #BCBCBC;
+$color-menu: #5A5A5A;
+$color-innerBg: #F0F0F0;
 // 連結顏色
 $aColor: $primaryColor;
 $aHover: darken($aColor, 10);
