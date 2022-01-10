@@ -285,6 +285,32 @@ $(function() {
     if (_dotAmount == 1) {
         _dot.hide();
     }
+
+
+    var stickyShareTop = Math.floor($('.shareBlock').offset().top),
+        _window = $(window),
+        ww = _window.outerWidth(),
+        wwNormal = 1300,
+        wwMedium = 992,
+        wwSmall = 768,
+        wwxs = 576;
+    // function stickyShare() {
+    //     if (ww >= wwSmall && $('.shareBlock').scrollTop() > stickyShareTop) {
+    //         $('.shareBlock').addClass('sticky');
+            
+    //     } else {
+    //         $('.shareBlock').removeClass('sticky');
+    //     }  
+    // }
+    _window.on('scroll', function (event) {
+        if (ww >= wwNormal && $(window).scrollTop() > stickyShareTop) {
+            $('.shareBlock').addClass('sticky');
+            
+        } else {
+            $('.shareBlock').removeClass('sticky');
+        }  
+    });     
+
 });
 
 

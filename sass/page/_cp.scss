@@ -19,7 +19,7 @@ h2.title {
         height: calc(100% - 100px);
         bottom: 0;
         left: 0;
-        background:#fff url(../images/cp_bg.png) top  center repeat-y;
+        background:#fff url(../images/cp_bg.png) top 500px center repeat-y;
         background-size: 100%;
     }
 
@@ -146,7 +146,7 @@ h2.title {
         .file_item {
             position: relative;
             display: flex;
-            padding: .3em 2.8em .3em .8em;
+            padding: .3em 2.5em .3em .5em;
             border-bottom: solid 1px #eee;
             border-radius: 30px;
             min-width: 3.5em;
@@ -164,7 +164,7 @@ h2.title {
                 position: absolute;
                 background: url(../images/basic/icon_download.svg) no-repeat center;
                 background-size: contain;
-                right: 1em;
+                right: .8em;
                 top: calc(50% - 8px);
                 transition: .2s ease-in;
             }

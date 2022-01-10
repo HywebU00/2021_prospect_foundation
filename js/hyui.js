@@ -380,6 +380,17 @@ $(function () {
         stickyMegaNavBar();
     }
 
+    // var stickyShareTop = Math.floor($('.shareBlock').offset().top)
+    // _window.on('scroll', function (event) {
+        
+    //     if (ww >= wwSamll && $('.shareBlock').scrollTop() > stickyShareTop) {
+    //         $('.shareBlock').addClass('sticky');
+            
+    //     } else {
+    //         $('.shareBlock').removeClass('sticky');
+    //     }  
+    // });   
+
     /*-----------------------------------*/
     //////////// notice訊息區塊 ////////////
     /*-----------------------------------*/
