@@ -189,7 +189,8 @@ body {
 
     .main {
         padding-top: 2em;
-        background: $color-innerBg;
+        background: $color-innerBg url(../images/innerpage_bg01.png) top -40px right -250px no-repeat;
+        background-size: 1100px;
         margin-bottom: 0;
     }
 }
@@ -389,6 +390,11 @@ body {
     h2{
         margin: 0 0 1em 0;
     }
+}
+
+//嵌入播放器
+.embed_player{
+    text-align: center;
 }
 
 .hidden {

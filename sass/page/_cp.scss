@@ -11,7 +11,6 @@ h2.title {
 // .tt{ color: #222; }
 .cp {
     position: relative;
-    
 
     &:before{
         content:"";
@@ -20,7 +19,8 @@ h2.title {
         height: calc(100% - 100px);
         bottom: 0;
         left: 0;
-        background: #fff;
+        background:#fff url(../images/cp_bg.png) top  center repeat-y;
+        background-size: 100%;
     }
 
     .pic {
