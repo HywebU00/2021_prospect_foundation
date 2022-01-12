@@ -192,6 +192,10 @@ body {
         background: $color-innerBg url(../images/innerpage_bg01.png) top -40px right -250px no-repeat;
         background-size: 1100px;
         margin-bottom: 0;
+
+        h2{
+            font-size:2em;
+        }
     }
 }
 

@@ -27,9 +27,11 @@
             padding: 0;
             border-top: 2px solid $primaryColor;
             & > li {
-                padding: 0.75em 0 0.5em;
+                display: flex;
+                padding: 1em 0.5em;
                 border-bottom: 1px solid #ddd;
                 position: relative; // outline: 1px solid blue;
+                justify-content: space-between;
                 .tag {
                     margin-left: 2em;
                 }
@@ -65,7 +67,7 @@
                 }
                 time {
                     display: block;
-                    color: #aaa;
+                    color: lighten($color-word2, 20);
                     font-size: 0.938em;
                     font-weight: normal;
                 }

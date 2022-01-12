@@ -31,8 +31,8 @@ $aColor: $primaryColor;
 $aHover: darken($aColor, 10);
 $aFocus: lighten($aColor, 10);
 // 表單focus顏色
-$form-focus: #00a4f9; //表單
-$form-btn: #00a4f9; //表單
+$form-focus: $primaryColor; //表單
+$form-btn: $primaryColor; //表單
 //------------------------------------------------------字型--------//
 
 // 字型設定
