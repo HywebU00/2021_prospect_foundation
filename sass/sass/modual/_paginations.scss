@@ -160,6 +160,10 @@
             padding: 0 5px;
             color: $primaryColor;
             text-decoration: none;
+            &.active{
+                font-weight: bold;
+                color: darken($primaryColor, 10);
+            }
         }
     }
 }

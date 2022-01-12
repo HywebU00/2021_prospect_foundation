@@ -32,16 +32,29 @@
                 border-bottom: 1px solid #ddd;
                 position: relative; // outline: 1px solid blue;
                 justify-content: space-between;
+                @include screen('mobile'){
+                    flex-wrap: wrap;
+                }
+
                 .tag {
                     margin-left: 2em;
                 }
                 & > a {
-                    display: block;
                     padding-left: 2em;
                     position: relative;
                     line-height: 1.45em;
                     font-weight: bold;
                     color: $color-word;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-height:46px;
+                    @include screen('mobile'){
+                        width: 100%;
+                    }
+
                     &:hover {
                         color: $aHover;
                     }
@@ -70,6 +83,63 @@
                     color: lighten($color-word2, 20);
                     font-size: 0.938em;
                     font-weight: normal;
+                    @include screen('mobile'){
+                        padding-left: 2em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.list_hasImg{
+    >ul{
+        @include li-reset;
+        >li{
+            display: flex;
+            background: #fff;
+            margin-bottom: 1em;
+            padding: 1em;
+            @include screen('mobile'){
+                flex-wrap: wrap;
+            }
+        }
+    }
+    .left_col{
+        flex: 0 0 270px;
+        max-width: 33.3333%;
+        margin: 0 1em 0 0;
+
+        @include screen('mobile'){
+            flex-basis: 100%;
+            max-width: 100%;
+            margin: 0 0 1em 0;
+        }
+
+        .img-container{
+            @include aspect-ratio(3, 2);
+        }
+
+    }
+
+    .right_col{
+        flex: 1 1 auto;
+        table{
+            th,
+            td{
+                padding: .7em .5em;
+            }
+
+            th{
+                width: 150px;
+                @include screen('mobile'){
+                    width: 110px;
+                }
+            }
+            td{
+                a{
+                    font-weight: bold;
+                    text-decoration: underline;
                 }
             }
         }

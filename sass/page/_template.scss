@@ -190,8 +190,12 @@ body {
     .main {
         padding-top: 2em;
         background: $color-innerBg url(../images/innerpage_bg01.png) top -40px right -250px no-repeat;
-        background-size: 1100px;
+        background-size: contain;
         margin-bottom: 0;
+
+        @include screen('xs_mobile'){
+            background-position: top -20px right -100px;
+        }
 
         h2{
             font-size:2em;
