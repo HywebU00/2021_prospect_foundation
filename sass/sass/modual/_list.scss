@@ -108,7 +108,7 @@
     .left_col{
         flex: 0 0 270px;
         max-width: 33.3333%;
-        margin: 0 1em 0 0;
+        margin: 0 .5em 0 0;
 
         @include screen('mobile'){
             flex-basis: 100%;
@@ -124,26 +124,43 @@
 
     .right_col{
         flex: 1 1 auto;
-        table{
-            th,
-            td{
-                padding: .7em .5em;
+        &.listBlock{
+            ul{
+                @include li-reset;
             }
-
-            th{
-                white-space: normal;
-                word-break: break-word;
-                word-break: break;
-                width: 150px;
-                @include screen('mobile'){
-                    width: 110px;
-                    text-align: left;
+            li{
+                display: flex;
+                padding: .2em;
+                border-bottom: 1px solid $color-light-gray;
+                &:first-of-type{
+                    border-top: 1px solid $color-light-gray;
+                }
+                @include screen('xs_mobile'){
+                    flex-wrap: wrap;
                 }
             }
-            td{
+            .list_title{
+                display: flex;
+                align-items: center;
+                font-weight: bold;
+                padding: .5em .65em;
+                flex: 0 0 150px;
+                background: $color-innerBg;
+                @include screen('xs_mobile'){
+                    flex-basis: 100%;
+                }
+            }
+            .list_content{
+                display: flex;
+                align-items: center;
+                padding: .5em .65em;
                 a{
-                    font-weight: bold;
+                    color: $color-word;
                     text-decoration: underline;
+                    font-weight: bold;
+                    &:hover{
+                        color: $aHover;
+                    }
                 }
             }
         }
