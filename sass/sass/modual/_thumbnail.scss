@@ -34,15 +34,23 @@
             object-fit: cover;
         }
     }
-    h2,
     h3,
     h4 {
         margin: 0.2em 0;
+        line-height: 1.5em;
+        font-size: 1.125em;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: 80px;
+        height: 80px;
     }
     .caption {
         width: 90%;
         margin: 0 auto;
-        padding-bottom: 1em;
+        padding-bottom: .5em;
     }
     .btn_grp {
         padding: 0.2em 0;
