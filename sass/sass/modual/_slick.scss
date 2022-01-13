@@ -1115,11 +1115,11 @@
             position: absolute;
             right: 0;
             top: -52px;
-            max-width: calc(100% - 200px);
+            width: calc(100% - 200px);
 
             @include screen('mobile') {
                 position: static;
-                max-width: 100%;
+                width: 100%;
                 margin: 0 50px;
             }
         }

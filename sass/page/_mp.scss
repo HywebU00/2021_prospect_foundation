@@ -333,6 +333,9 @@ a.more {
                 }
 
             }
+            &:focus{
+                box-shadow: 0 0 0 2px $primaryColor inset;
+            }
 
             .img-container {
                 @include aspect-ratio(3, 2);
@@ -494,19 +497,22 @@ a.more {
 .articleGrp {
     display: flex !important;
     flex-wrap: wrap;
-    justify-content: space-between;
+    margin: 0 -4px;
 
     .articleBlock {
         flex-basis: calc(33.33333% - 8px);
         //height: 286px;
-        margin-bottom: 8px;
+        margin: 0 4px 8px;
 
         @include screen('mobile') {
-            flex-basis: calc(50% - 4px);
+            flex-basis: calc(50% - 8px);
         }
+        // @media screen and (max-width: 420px){
+        //     flex-basis: 100%;
+        // }
 
         &:first-of-type {
-            flex-basis: calc(66.66666% - 4px);
+            flex-basis: calc(66.66666% - 8px);
 
             @include screen('mobile') {
                 flex-basis: 100%;
