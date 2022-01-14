@@ -26,7 +26,6 @@
 
 // 模組 modual
 @import 'sass/modual/_header'; //header
-@import 'sass/modual/_header_e'; //header 英文版
 @import 'sass/modual/_menu'; //menu
 @import 'sass/modual/_megamenu'; //megamenu
 @import 'sass/modual/_menuSidebar'; //menuSidebar
@@ -53,6 +52,7 @@
 @import 'page/_mp'; //首頁
 @import 'page/_cp'; //CP
 @import 'page/_sitemap'; //Sitemap
-@import 'page/_left_block'; //左欄left_block
+//@import 'page/_left_block'; //左欄left_block
+@import 'page/_en'; //英文版
 
 @import 'sass/common/_print'; //列印樣式

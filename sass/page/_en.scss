@@ -1,0 +1,12 @@
+//_list.scss
+.list_hasImg{
+	&.journal{
+		.imgBlock{
+			a{
+				&:after{
+					content:"MORE";
+				}
+			}
+		}
+	}
+}
