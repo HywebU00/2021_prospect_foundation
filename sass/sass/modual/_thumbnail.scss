@@ -51,6 +51,10 @@
         width: 90%;
         margin: 0 auto;
         padding-bottom: .5em;
+        time{
+            font-size: .875em;
+            color: lighten($color-word2, 20);
+        }
     }
     .btn_grp {
         padding: 0.2em 0;
