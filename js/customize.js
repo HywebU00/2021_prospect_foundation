@@ -93,7 +93,7 @@ $(function() {
         fade: true,
         asNavFor: '.trendingSlider-nav'
     });
-    $('.trendingSlider-nav').slick({
+    $('.ch_nav').slick({
         slidesToShow: 6,
         slidesToScroll: 1,
         asNavFor: '.trendingSlider-for',
@@ -118,6 +118,50 @@ $(function() {
                 breakpoint: 640,
                 settings: {
                     slidesToShow: 4,
+                    dots: false,
+                },
+            },
+            {
+                breakpoint: 575,
+                settings: {
+                    slidesToShow: 3,
+                    dots: false,
+                },
+            },
+            {
+                breakpoint: 420,
+                settings: {
+                    slidesToShow: 2,
+                    dots: false,
+                },
+            },
+        ],
+    });
+    $('.en_nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.trendingSlider-for',
+        infinite: false,
+        dots: true,
+        centerMode: false,
+        focusOnSelect: true,
+        responsive: [{
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                    dots: false,
+                },
+            },
+            {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 2,
                     dots: false,
                 },
             },
@@ -337,6 +381,7 @@ $(document).ready(function() {
         }
     });
     var SwiperMain = new Swiper(".SwiperMain", {
+        effect: "fade",
         autoplay: {
             delay: 8000, //輪播秒數
             pauseOnMouseEnter: false, //滑鼠移至swiper上停止
@@ -457,7 +502,7 @@ $(document).ready(function() {
     });
     var SwiperMain02 = new Swiper(".SwiperMain02", {
         autoplay: {
-            delay: 5000, //輪播秒數
+            delay: 8000, //輪播秒數
             pauseOnMouseEnter: false, //滑鼠移至swiper上停止
             disableOnInteraction: false, //移開後可以繼續autoPlay
         },

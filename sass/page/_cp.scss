@@ -10,18 +10,20 @@ h2.title {
 
 // .tt{ color: #222; }
 .cp {
+    padding: 2em 0;
     position: relative;
+    background:#fff url(../images/cp_bg.png) top 500px center repeat-y;
+    background-size: 100%;
 
-    &:before{
-        content:"";
-        position: absolute;
-        width: 100%;
-        height: calc(100% - 100px);
-        bottom: 0;
-        left: 0;
-        background:#fff url(../images/cp_bg.png) top 500px center repeat-y;
-        background-size: 100%;
-    }
+    // &:before{
+    //     content:"";
+    //     position: absolute;
+    //     width: 100%;
+    //     height: calc(100% - 100px);
+    //     bottom: 0;
+    //     left: 0;
+        
+    // }
 
     .pic {
         float: left;

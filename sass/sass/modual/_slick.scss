@@ -668,6 +668,15 @@
 }
 
 .mpbanner_slider {
+    .SwiperMain02{
+        .swiper-wrapper{
+            .swiper-slide{
+                img {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
     .swiper-wrapper {
         height: calc(100vh + 20px);
         min-height: 650px;
@@ -703,6 +712,8 @@
                 object-fit: cover;
                 width: 100%;
                 height: 100%;
+                transform: scale(1.1);
+                transition: 8s ease-in;
             }
 
             &.swiper-slide-thumb-active {
@@ -713,9 +724,10 @@
 
             &.swiper-slide-active {
                 img {
-                    animation-name: imgdynamic;
-                    animation-duration: 10s;
-                    animation-timing-function: ease-in;
+                    transform: scale(1);
+                    // animation-name: imgdynamic;
+                    // animation-duration: 8s;
+                    // animation-timing-function: ease-in;
                 }
 
                 .keyword_tag, .bigTitle, .type_tag{
@@ -849,6 +861,7 @@
         margin-right: .5em;
         font-size: 1.5em;
         font-weight: bold;
+        transition: .5s ease-in;
     }
 
     .navTitle {
@@ -875,18 +888,36 @@
             padding: 1.2em 2em;
         }
 
+        // &:after {
+        //     content: "";
+        //     position: absolute;
+        //     top: -1px;
+        //     left: 0;
+        //     display: block;
+        //     width: 0;
+        //     height: 2px;
+        //     background: #fff;
+        //     transition: 8s ease-in;
+        // }
+
         &.swiper-slide-thumb-active {
             position: relative;
-
             &:after {
                 content: "";
                 position: absolute;
                 top: -1px;
                 left: 0;
                 display: block;
-                width: 100%;
+                width: 1px;
                 height: 2px;
                 background: #fff;
+                animation-name: progressbar;
+                animation-duration: 8s;
+                animation-timing-function: linear;
+                
+            }
+            .navNum{
+                border-color: $primaryColor;
             }
         }
     }
@@ -1119,6 +1150,13 @@
         &:hover {
             color: $primaryColor;
         }
+        span{
+            display: block;
+            // white-space: nowrap;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
+
+        }
     }
 
     .trendingSlider-for {
@@ -1131,6 +1169,7 @@
         @include screen('mobile') {
             padding: 1em 0;
         }
+
     }
 
     .trendingSlider-nav {
@@ -1145,6 +1184,24 @@
                 position: static;
                 width: 100%;
                 margin: 0 50px;
+            }
+        }
+        &.en_nav{
+            .nav_thumb{
+                position: relative;
+                text-align: center;
+                &:before{
+                    content:"";
+                    position: absolute;
+                    display: block;
+                    width: 1px;
+                    height: 1em;
+                    right: 0;
+                    top: 4px;
+                    background: $color-line
+                }
+                //border-right: 1px solid $color-line;
+                
             }
         }
     }
@@ -1163,7 +1220,6 @@
 
         >span {
             position: relative;
-            display: inline-block;
             padding-bottom: .3em;
 
             &:before {
@@ -1218,13 +1274,23 @@
 
 }
 
-@keyframes imgdynamic {
+@keyframes progressbar {
     0% {
-        transform: scale(1);
+        width: 1px;
     }
 
     100% {
+        width: 100%;;
+    }
+}
+
+@keyframes imgdynamic {
+    0% {
         transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
 

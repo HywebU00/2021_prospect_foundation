@@ -482,7 +482,6 @@ body {
 }
 
 .categoryBlock {
-    margin-bottom: 2em;
     .categoryTitle{
         font-size: 1em;
         border-bottom: 2px solid $color-hr; 
@@ -519,6 +518,7 @@ body {
     }
     &.accordion2 {
         .accordion_content {
+            padding-bottom: 1em;
             ul {
                 @include li-reset;
             }
