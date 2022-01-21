@@ -401,7 +401,7 @@ $(function () {
     /*-----------------------------------*/
     //////////// Accordion設定 ////////////
     /*-----------------------------------*/
-    $('.accordion').each(function () {
+    $('.accordion').each(function (e) {
         $(this).find('.accordion-content').hide();
         var _accordionItem = $(this).children('ul').children('li').children('a');
         _accordionItem.each(function () {
@@ -416,10 +416,20 @@ $(function () {
             $(this).keyup(accordion);
         });
     });
+    $('.accordion_btn').click(function (e) {
+        $(this).next('.accordion_content').slideToggle();
+        $(this).toggleClass('active');
+        e.preventDefault();
+    });
+
+    $('.search_condition').click(function (e) {
+        $(this).hide();
+        e.preventDefault();
+    });
     /*-----------------------------------*/
     /////////////fatfooter開關/////////////
     /*-----------------------------------*/
-    $('.btn-fatfooter').click(function (e) {
+    $('.btn-fatfooter').click(function () {
         $(this)
             .parent('.container')
             .find('nav>ul>li>ul')

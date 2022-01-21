@@ -10,3 +10,16 @@
 		}
 	}
 }
+
+.searchBlock{
+	.accordion_btn{
+		&:after{
+            content:"Close";
+        }
+        &.active{
+            &:after{
+                content: "Open";
+            }
+        }
+	}
+}

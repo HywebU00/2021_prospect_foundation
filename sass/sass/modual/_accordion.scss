@@ -1,14 +1,14 @@
 .accordion {
+    background: #fff;
     ul {
-        list-style: none;
+        @include li-reset;
         li {
             margin-bottom: 0.5em;
             a {
                 display: block;
-                background-color: #21baff;
-                color: #fff;
                 text-decoration: none;
                 padding: 5px;
+                border-bottom: 1px solid $color-light-gray;
             }
         }
     }
@@ -18,3 +18,36 @@
     }
 }
 // 
+
+.accordion2{
+    background: #fff;
+
+    .accordion_btn{
+        position: relative;
+        border-radius: 0; 
+        display: block;
+        padding: .7em 0;
+        text-align: left;
+        color: $color-word2;
+        font-weight: bold;
+        
+        &:before{
+            content:"";
+            position: absolute;
+            right: 0;
+            top: calc(50% - 10px);
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: url(../images/icon/icon_arrow_up.svg) center no-repeat;
+            background-size: contain;
+            opacity: .6;
+        }
+
+        &.active{
+            &:before{
+                background-image: url(../images/icon/icon_arrow_down.svg)
+            }
+        }
+    }
+}

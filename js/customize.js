@@ -294,14 +294,7 @@ $(function() {
         wwMedium = 992,
         wwSmall = 768,
         wwxs = 576;
-    // function stickyShare() {
-    //     if (ww >= wwSmall && $('.shareBlock').scrollTop() > stickyShareTop) {
-    //         $('.shareBlock').addClass('sticky');
-            
-    //     } else {
-    //         $('.shareBlock').removeClass('sticky');
-    //     }  
-    // }
+
     _window.on('scroll', function (event) {
         if (ww >= wwNormal && $(window).scrollTop() > stickyShareTop) {
             $('.shareBlock').addClass('sticky');
@@ -309,7 +302,9 @@ $(function() {
         } else {
             $('.shareBlock').removeClass('sticky');
         }  
-    });     
+    });    
+
+    
 
 });
 
