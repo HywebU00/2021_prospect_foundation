@@ -1151,7 +1151,7 @@
             color: $primaryColor;
         }
         span{
-            display: block;
+            display: inline-block;
             // white-space: nowrap;
             // overflow: hidden;
             // text-overflow: ellipsis;
@@ -1182,7 +1182,7 @@
 
             @include screen('mobile') {
                 position: static;
-                width: 100%;
+                width: calc(100% - 100px);
                 margin: 0 50px;
             }
         }

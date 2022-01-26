@@ -23,3 +23,11 @@
         }
 	}
 }
+
+.shareBlock{
+	&.sticky{
+		&:before{
+			content: "Share";
+		}
+	}
+}

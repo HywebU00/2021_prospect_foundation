@@ -330,26 +330,24 @@ $(function() {
         _dot.hide();
     }
 
-
-    var stickyShareTop = Math.floor($('.shareBlock').offset().top),
-        _window = $(window),
-        ww = _window.outerWidth(),
-        wwNormal = 1300,
-        wwMedium = 992,
-        wwSmall = 768,
-        wwxs = 576;
-
-    _window.on('scroll', function (event) {
-        if (ww >= wwNormal && $(window).scrollTop() > stickyShareTop) {
-            $('.shareBlock').addClass('sticky');
-            
-        } else {
-            $('.shareBlock').removeClass('sticky');
-        }  
-    });    
-
+    if($('.shareBlock').length > 0) {
+        var stickyShareTop = Math.floor($('.shareBlock').offset().top),
+            _window = $(window),
+            ww = _window.outerWidth(),
+            wwNormal = 1300,
+            wwMedium = 992,
+            wwSmall = 768,
+            wwxs = 576;
     
-
+        _window.on('scroll', function (event) {
+            if (ww >= wwNormal && $(window).scrollTop() > stickyShareTop) {
+                $('.shareBlock').addClass('sticky');
+                
+            } else {
+                $('.shareBlock').removeClass('sticky');
+            }  
+        });
+    }
 });
 
 
@@ -395,10 +393,10 @@ $(document).ready(function() {
             swiper: swiperThumb, //同步至swiperThumb
         }
     });
-    swiperThumb.$el.on('mouseover', () => {
+    swiperThumb.on('mouseover', () => {
         SwiperMain.autoplay.stop();
     });
-    swiperThumb.$el.on('mouseleave', () => {
+    swiperThumb.on('mouseleave', () => {
         SwiperMain.autoplay.running = true;
         SwiperMain.autoplay.run();
     });
@@ -514,10 +512,10 @@ $(document).ready(function() {
             swiper: swiperThumb02, //同步至swiperThumb
         }
     });
-    swiperThumb02.$el.on('mouseover', () => {
+    swiperThumb02.on('mouseover', () => {
         SwiperMain02.autoplay.stop();
     });
-    swiperThumb02.$el.on('mouseleave', () => {
+    swiperThumb02.on('mouseleave', () => {
         SwiperMain02.autoplay.running = true;
         SwiperMain02.autoplay.run();
     });
