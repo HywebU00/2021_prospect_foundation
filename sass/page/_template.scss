@@ -199,7 +199,7 @@ body {
     }
 
     .main {
-        padding: 2em 0;
+        padding: 2em 0 0 0;
         background: $color-innerBg url(../images/innerpage_bg01.png) top -40px right -250px no-repeat;
         background-size: 1000px;
         margin-bottom: 0;
@@ -336,8 +336,8 @@ body {
 
     >.tagGrp {
         position: absolute;
-        top: 1em;
-        left: 1em;
+        top: 10px;
+        left: 10px;
         display: flex;
         flex-wrap: wrap;
         z-index: 1;
@@ -348,7 +348,7 @@ body {
         position: absolute;
         bottom: 1em;
         margin: 0;
-        padding: 0 15px;
+        padding: 0 10px;
         color: #fff;
         width: 100%;
         display: -webkit-box;

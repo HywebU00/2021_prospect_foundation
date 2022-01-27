@@ -35,10 +35,14 @@
         .cp_slider {
             .img-container {
                 overflow: initial;
+                max-width: 100%;
 
                 .caption {
                     bottom: -3.5em;
                 }
+            }
+            .slick-track{
+                width: 100% !important;
             }
         }
     }
@@ -62,6 +66,8 @@
         .cppic_slider {
             .slick-track {
                 width: 100% !important;
+                display: flex;
+                flex-wrap: wrap;
             }
 
             .articleBlock {
@@ -83,6 +89,10 @@
                 }
             }
         }
+    }
+
+    .shareBlock.sticky{
+        display: none;
     }
 
     .main,
