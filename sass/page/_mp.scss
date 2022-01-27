@@ -453,7 +453,7 @@ a.more {
             bottom: 0;
             left: 0em;
             margin: 0;
-            padding: 0 1.5em;
+            padding: 0 15px;
             z-index: 3;
             color: #fff;
             width: 100%;
@@ -468,8 +468,8 @@ a.more {
 
     .tagGrp {
         position: absolute;
-        top: 1.2em;
-        left: 1.5em;
+        top: 10px;
+        left: 15px;
         z-index: 3;
     }
 }
