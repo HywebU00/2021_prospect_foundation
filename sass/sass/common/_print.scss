@@ -28,8 +28,8 @@
     .cp {
         @include gutter(0);
         .cp_slider {
-            display: flex;
-            flex-wrap: wrap;
+            // display: flex;
+            // flex-wrap: wrap;
             .img-container {
                 overflow: initial;
                 max-width: 100%;
@@ -41,9 +41,13 @@
                 width: 100% !important;
                 transform: none !important;
             }
-            .slick-slide,
-            .slick-slide.slick-current {
-                transform: scale(1);
+            .slick-slide {
+                &.slick-current {
+                    transform: scale(1);
+                }
+                &.slick-cloned {
+                    display: none;
+                }
             }
         }
     }
