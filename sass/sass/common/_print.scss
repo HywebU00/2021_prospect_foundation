@@ -2,7 +2,6 @@
     %no-bg {
         background: none;
     }
-
     /* -------------------------------不需要列印的區塊，請放置於這----//*/
     header,
     .fatfooter,
@@ -11,7 +10,6 @@
     .submenu {
         display: none;
     }
-
     /* -------------------------------各別顯示設定----//*/
     body {
         background: transparent;
@@ -21,67 +19,62 @@
         @extend %no-bg;
         -webkit-print-color-adjust: exact;
     }
-
     .container {
         margin: 0px auto;
         max-width: 100% !important;
         width: 100% !important;
         @include gutter(0);
     }
-
     .cp {
         @include gutter(0);
-
         .cp_slider {
+            display: flex;
+            flex-wrap: wrap;
             .img-container {
                 overflow: initial;
                 max-width: 100%;
-
                 .caption {
                     bottom: -3.5em;
                 }
             }
-            .slick-track{
+            .slick-track {
                 width: 100% !important;
+                transform: none !important;
+            }
+            .slick-slide,
+            .slick-slide.slick-current {
+                transform: scale(1);
             }
         }
     }
-
     .innerpage {
         margin-top: 0 !important;
-
         >.container {
             display: block !important;
-
             .center_block {
                 overflow: hidden;
             }
-
             .left_block {
                 float: left !important;
                 width: 260px !important;
             }
         }
-
         .cppic_slider {
             .slick-track {
                 width: 100% !important;
                 display: flex;
                 flex-wrap: wrap;
             }
-
             .articleBlock {
                 margin-bottom: 1em;
                 padding-top: 270px;
-
                 >h3,
                 .articleTitle,
                 .tagGrp,
                 >time {
                     position: static !important;
                 }
-
-                .img-container{
+                .img-container {
                     position: absolute;
                     top: 0;
                     left: 0;
@@ -90,11 +83,9 @@
             }
         }
     }
-
-    .shareBlock.sticky{
+    .shareBlock.sticky {
         display: none;
     }
-
     .main,
     .content {
         @include gutter(0);
@@ -106,21 +97,18 @@
         @include clearfix;
         @extend %no-bg;
         padding-top: 0px !important;
-
         img {
             &.float_left {
                 float: right;
                 max-width: 50%;
                 margin: 0px 1em 1em 0;
             }
-
             &.float_right {
                 float: right;
                 max-width: 50%;
                 margin: 0px 0 1em 1em;
             }
         }
-
         a:link,
         a:visited,
         a {
@@ -131,35 +119,28 @@
             text-align: left;
             word-wrap: break-word;
         }
-
         p {
             a {
                 word-wrap: break-word;
             }
-
             a[href^="http"]:after {
                 content: " ("attr(href) ")";
                 font-size: 90%;
             }
-
             a[href^="#"]:after {
                 display: none;
             }
         }
-
         abbr[title]:after {
             content: " ("attr(title) ")";
         }
-
         table {
             background: #FFF;
         }
-
         li {
             content: "» ";
         }
     }
-
     /* 檔案下載*/
     .file_download {
         a {
@@ -167,7 +148,6 @@
             clear: both !important;
             width: 100% !important;
         }
-
         .update,
         .file_view {
             float: none !important;
@@ -176,7 +156,6 @@
             margin-left: 3em;
         }
     }
-
     *,
     *:before,
     *:after,
@@ -190,27 +169,22 @@
         box-shadow: none !important;
         text-shadow: none !important;
     }
-
     thead {
         display: table-header-group;
         /* 表格即使分頁也會顯示表頭 */
     }
-
     .lightbox_slider {
         page-break-inside: avoid;
         overflow: hidden;
         height: 6cm;
-
         .cp_slider {
             text-align: center;
-
             .slick-slide {
                 width: 30%;
                 height: 4cm;
                 display: inline-block;
                 background: #DEDEDE;
                 position: relative;
-
                 &:before {
                     content: "";
                     position: absolute;
@@ -222,7 +196,6 @@
                     height: 100%;
                     box-shadow: 0px 0px 0px 1px #ccc;
                 }
-
                 img {
                     width: auto;
                     height: auto;
