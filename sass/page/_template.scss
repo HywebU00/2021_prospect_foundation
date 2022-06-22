@@ -22,7 +22,6 @@ body {
 .wrapper {
     width: 100%;
     margin: 0px auto;
-
     @include screen('mobile') {
         background: #fff;
         overflow: hidden;
@@ -35,7 +34,6 @@ body {
     padding: 0;
     margin: 0 auto;
     max-width: $container-max; //請看_variable.scss
-
     @media screen and (max-width: 1200px) {
         padding: 0 15px;
     }
@@ -44,16 +42,13 @@ body {
 .main {
     position: relative;
     margin: 0 auto 5em;
-
     @include screen('mobile') {
         padding-top: 60px;
     }
-
     // 可先設定一個中央區塊最大寬，限制accesskey對齊
     h2 {
         line-height: 1.25em;
     }
-
     // &.main{
     //     @include screen('mobile') {
     //         padding-top: 0;
@@ -62,7 +57,6 @@ body {
     &.small_size {
         font-size: 0.938em;
     }
-
     &.large_size {
         font-size: 1.125em;
     }
@@ -114,12 +108,10 @@ body {
     // &.large_size {
     //     font-size: 1.125em;
     // }
-
     header {
         position: relative;
         background: #fff;
         box-shadow: rgba(0, 0, 0, .1) 0px 1px;
-
         .navigation {
             .navlist {
                 li {
@@ -132,25 +124,21 @@ body {
         @include screen('mobile') {
             position: fixed;
         }
-
         h1 {
             @include screen('mobile') {
                 background-color: #fff;
             }
         }
-
         >.container {
             .searchCtrl {
                 &:before {
                     background: url(../images/basic/icon_search.png) no-repeat center center;
                     background-size: 28px;
                     content: '';
-
                 }
             }
         }
     }
-
     .menu {
         >ul {
             >li {
@@ -159,12 +147,10 @@ body {
                 }
             }
         }
-
         &.sticky {
             background-color: #fff;
         }
     }
-
     .search {
         a {
             background: rgba(0, 0, 0, 0.2) url(../images/icon/icon_search.svg) no-repeat center right 1em;
@@ -172,7 +158,6 @@ body {
             color: $color-word;
             opacity: .7;
             transition: .2s ease-in;
-
             &:hover {
                 background: $primaryColor url(../images/icon/icon_search2.svg) no-repeat center right 1em;
                 background-size: 16px;
@@ -181,13 +166,11 @@ body {
             }
         }
     }
-
     .font_size {
         ul {
             li {
                 a {
                     color: lighten($color-word2, 10);
-
                     &:hover,
                     &:focus,
                     &.active {
@@ -197,21 +180,17 @@ body {
             }
         }
     }
-
     .main {
         padding: 2em 0 0 0;
         background: $color-innerBg url(../images/innerpage_bg01.png) top -40px right -250px no-repeat;
         background-size: 1000px;
         margin-bottom: 0;
-
         @include screen('mobile') {
             background-size: 500px;
         }
-
         @include screen('xs_mobile') {
             background-position: top -20px right -100px;
         }
-
         // h2{
         //     font-size:2em;
         // }
@@ -221,27 +200,21 @@ body {
 .authorBlock {
     display: flex;
     margin: 2em 0;
-
     @include screen('mobile') {
         flex-wrap: wrap;
     }
-
     ul {
         @include li-reset;
     }
-
     .author_photo {
         margin-right: .8em;
-
         @include screen('mobile') {
             margin-bottom: .5em;
         }
-
         ul {
             display: flex;
             align-items: flex-start;
         }
-
         li {
             position: relative;
             width: 40px;
@@ -250,52 +223,52 @@ body {
             overflow: hidden;
             margin-left: -8px;
             border: 2px solid $color-innerBg;
-
             &:nth-of-type(1) {
                 z-index: 10;
                 margin-left: 0;
             }
-
             &:nth-of-type(2) {
                 z-index: 9;
             }
-
             &:nth-of-type(3) {
                 z-index: 8;
             }
-
             &:nth-of-type(4) {
                 z-index: 7;
             }
-
             &:nth-of-type(5) {
                 z-index: 6;
             }
-
             img {
                 object-fit: cover;
+                width: 100%;
+                height: 100%;
             }
         }
     }
-
     .author_text {
         font-size: .875em;
         color: $color-word2;
         flex: 1 1 auto;
-
         .author {
             color: $color-word;
             display: inline-block;
             margin-right: 1em;
             white-space: nowrap;
             min-width: 42px;
+            flex-shrink: 0;
+            @include screen('mobile') {
+                flex-basis: 100%;
+            }
         }
     }
-
     li {
         display: flex;
+        margin-bottom: 3px;
+        @include screen('mobile') {
+            flex-wrap: wrap;
+        }
     }
-
     .published {
         color: lighten($color-word2, 10);
         font-size: .8125em;
@@ -307,7 +280,6 @@ body {
     display: block;
     position: relative;
     transition: .3s ease-in;
-
     &:after {
         content: "";
         position: absolute;
@@ -319,21 +291,17 @@ body {
         background-color: rgba(0, 0, 0, 0.15);
         transition: .3s ease-in;
     }
-
     &:hover {
         box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-
         &:after {
             background-color: transparent;
         }
-
         .img-container {
             img {
                 transform: scale(1.08);
             }
         }
     }
-
     >.tagGrp {
         position: absolute;
         top: 10px;
@@ -342,7 +310,6 @@ body {
         flex-wrap: wrap;
         z-index: 1;
     }
-
     >h3,
     .articleTitle {
         position: absolute;
@@ -361,13 +328,11 @@ body {
         z-index: 1;
         line-height: 1.4em;
     }
-
     .img-container {
         @include aspect-ratio(1, 1.1);
         position: relative;
         width: 100%;
         height: 100%;
-
         // &:after {
         //     content: "";
         //     position: absolute;
@@ -379,7 +344,6 @@ body {
         //     background-color: rgba(0, 0, 0, .1);
         //     transition: .3s ease-in;
         // }
-
         &:after {
             content: "";
             position: absolute;
@@ -389,7 +353,6 @@ body {
             height: 130px;
             background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.7) 100%);
         }
-
         img {
             width: 100%;
             height: 100%;
@@ -412,7 +375,6 @@ body {
 
 .related_articles {
     padding: 4em 0;
-
     h2 {
         margin: 0 0 1em 0;
     }
@@ -428,34 +390,30 @@ body {
         box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px 0px;
         padding: .2em 1em;
     }
-
-    .accordion_btn{
+    .accordion_btn {
         font-size: 0;
         height: 48px;
-        &:after{
-            content:"收合";
+        &:after {
+            content: "收合";
             position: absolute;
             left: 0;
             top: 14px;
             display: block;
             font-size: 1rem;
         }
-        &.active{
-            &:after{
+        &.active {
+            &:after {
                 content: "展開";
             }
         }
     }
-
     .accordion_content {
         padding: 2em 4em;
         border-top: 1px solid $color-line;
-
         @include screen('mobile') {
             padding: 0;
         }
     }
-
     .form_grp {
         &.form_inline {
             >label {
@@ -463,7 +421,6 @@ body {
                 color: $color-word2;
                 font-weight: bold;
             }
-
             >input {
                 flex-grow: 1;
                 border-radius: 30px;
@@ -473,11 +430,10 @@ body {
             }
         }
     }
-
     .btn_grp {
         .btn {
             padding: .5em 3em;
-            @include screen('mobile'){
+            @include screen('mobile') {
                 padding: .5em 2em;
             }
         }
@@ -485,37 +441,37 @@ body {
 }
 
 .categoryBlock {
-    .categoryTitle{
+    .categoryTitle {
         font-size: 1em;
-        border-bottom: 2px solid $color-hr; 
+        border-bottom: 2px solid $color-hr;
         padding: .4em 0;
     }
-    .itemsBlock{
+    .itemsBlock {
         margin-bottom: 1em;
-        button{
+        button {
             position: relative;
             color: $importantColor;
             border: none;
-            padding:0 0 0 24px; 
+            padding: 0 0 0 24px;
             margin-bottom: .8em;
-            @media screen and (min-width: 768px){
+            @media screen and (min-width: 768px) {
                 display: block;
             }
-            &:before{
-                content:"";
+            &:before {
+                content: "";
                 position: absolute;
                 left: 0;
                 top: calc(50% - 9px);
                 display: block;
                 width: 18px;
                 height: 18px;
-                background:$importantColor url(../images/icon/icon_minus2.svg) center no-repeat;
+                background: $importantColor url(../images/icon/icon_minus2.svg) center no-repeat;
                 background-size: 8px;
                 border-radius: 50%;
             }
         }
     }
-    .current_keyword{
+    .current_keyword {
         color: $color-word2;
         margin-bottom: .8em;
     }
@@ -525,66 +481,58 @@ body {
             ul {
                 @include li-reset;
             }
-
             li {
                 margin-bottom: .8em;
-
                 a {
                     display: block;
                     position: relative;
                     color: $importantColor;
                     font-size: .938em;
                     padding-left: 24px;
-                    &:before{
-                        content:"";
+                    &:before {
+                        content: "";
                         position: absolute;
                         left: 0;
                         top: calc(50% - 8px);
                         display: block;
                         width: 16px;
                         height: 16px;
-                        background:url(../images/basic/icon_right3.svg) center no-repeat;
+                        background: url(../images/basic/icon_right3.svg) center no-repeat;
                         background-size: 12px;
                     }
-                    &:hover{
+                    &:hover {
                         text-decoration: underline;
                     }
                 }
-
-                span{
+                span {
                     margin-left: .3em;
                 }
             }
         }
-
         .accordion_btn {
-            border-bottom: 2px solid $color-hr; 
+            border-bottom: 2px solid $color-hr;
             padding: .4em 0;
             margin-bottom: 1em;
             color: $color-word;
-            &:before{
+            &:before {
                 width: 16px;
                 height: 16px;
             }
         }
     }
-
 }
 
 .resultBlock {
     h2 {
         font-size: 1.625em;
     }
-
     .resultRow {
         box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px 0px;
         display: flex;
-
         @include screen('mobile') {
             flex-wrap: wrap;
             box-shadow: none;
         }
-
         .left_col {
             background: #fff;
             flex: 0 0 25%;
@@ -592,20 +540,17 @@ body {
             min-width: 260px;
             // @include screen('tablet'){
             //     flex-basis: 33.33333%;
-
             // }
             @include screen('mobile') {
                 flex-basis: 100%;
                 margin-bottom: .5em;
             }
         }
-
         .right_col {
             background: #fff;
             flex-basis: 75%;
             padding: 1.5em;
             box-shadow: 20px 0 15px -10px rgba(0, 0, 0, 0.08) inset;
-
             @include screen('mobile') {
                 flex-basis: 100%;
                 max-width: 100%;
@@ -614,19 +559,15 @@ body {
             }
         }
     }
-
     .list {
-
         &>ul,
         ol {
             border-top: 0;
-
             >li {
                 display: block;
                 padding: .5em 0;
             }
         }
-
         .info_grp {
             display: flex;
             padding-left: 2.2em;
@@ -634,7 +575,6 @@ body {
             color: lighten($color-word2, 10);
             flex-wrap: wrap;
             margin-top: .8em;
-
             span {
                 display: block;
                 padding-right: .8em;
@@ -642,14 +582,12 @@ body {
                 border-right: 1px solid $color-line;
                 line-height: 1;
                 white-space: nowrap;
-
                 &:last-of-type {
                     border-right: 0;
                 }
             }
         }
     }
-
 }
 
 .hidden {
